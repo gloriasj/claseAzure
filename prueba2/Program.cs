@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
 /*Console.WriteLine("Hello, World!");
 Console.WriteLine("Congtratulations");
 Console.WriteLine("  ");
@@ -35,9 +34,28 @@ var number=3;
 var number2 =32.1;
 Console.Write("Hello, mi name is " +  name  +  " i have " +  number  +  " now " +   number2);
 //OTRA MANERA DE HACERLO
-string name2= "Bob";
-int num1=3;
-decimal num2= 32.4m;
+//string name2= "Bob";
+//int num1=3;
+//decimal num2= 32.4m;
+
+//COMBINACION DE CADENAS
+string secondName="Dylan";
+string greeting= "Hello";
+//string message = greeting + " " + firstName + "!";
+string message2= $"{greeting} {secondName}!";
+Console.WriteLine(message2);
+
+//Console.Clear();
+int version = 11;
+string updateText = "Update to Windows";
+message2=$"{greeting} {version.ToString()}!";
+
+Console.WriteLine(message2);
+
+Console.Clear();
+string projectName = "First project";
+var path = $@"C:\Output\{projectName}\Data";
+Console.WriteLine(path);
 
 
 
