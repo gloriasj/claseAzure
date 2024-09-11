@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System.Text;
+Console.OutputEncoding= Encoding.UTF8;
 /*Console.WriteLine("Hello, World!");
 Console.WriteLine("Congtratulations");
 Console.WriteLine("  ");
@@ -44,6 +45,8 @@ string greeting= "Hello";
 //string message = greeting + " " + firstName + "!";
 string message2= $"{greeting} {secondName}!";
 Console.WriteLine(message2);
+
+
 
 //Console.Clear();
 int version = 11;
