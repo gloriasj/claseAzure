@@ -1,65 +1,46 @@
-﻿using System.Text;
-Console.OutputEncoding= Encoding.UTF8;
-/*Console.WriteLine("Hello, World!");
-Console.WriteLine("Congtratulations");
-Console.WriteLine("  ");
-Console.WriteLine("you wrote your first lines of code");
+﻿//SUMAS CON CONVERSION IMPLICITA DE DATOS
 
-Console.WriteLine("Es la primera linea");
-Console.WriteLine("Es la segunda linea");
+using System.Data;
 
-Console.Write('b');
+int firstNUmber = 12;
+int secondNumber = 7;
+Console.WriteLine(firstNUmber + secondNumber);
 
-Console.WriteLine("123");
-Console.WriteLine(123);*/
+string nombre ="Bob";
+int widgetsSold= 7;
+Console.WriteLine (nombre + " sold " + widgetsSold + " widgets ");
+///<concatena el +7, es decir, quedaria igual a 77>
+Console.WriteLine(nombre + " sold " + widgetsSold + 7 + " widgets ");
+/// <con el parentisis se convierte en otra operacion lo que daria 7+7+14> 
+Console.WriteLine(nombre + " sold " + (widgetsSold + 7) + " widgets ");
 
-//CREACION DE LA PRIMERA VARIABLE
+//EJERCICIOS
+//SUMA RESTA MULTIPLICACION Y DIVISION
+ int num1 = 10;
+ int num2 = 6;
+int resto= num1 % num2;
+ Console.WriteLine(num1 + num2);
+ Console.WriteLine(num1 - num2);
+ Console.WriteLine(num1 * num2);
+ Console.WriteLine(num1 / num2);
+ //division de enteros sacando el resultado de 
+ Console.WriteLine((decimal)num1 / (decimal)num2);
+ //resto de la division
+ Console.WriteLine(resto);
 
-string firstName;
-//firstName= "";
-//Console.WriteLine(firstName);
-firstName="Gloria";
-Console.WriteLine(firstName);
-firstName="Bob";
-Console.WriteLine(firstName);
-firstName="Isabella";
-Console.WriteLine(firstName);
-firstName="Yasmin";
-Console.WriteLine(firstName);
+///DIVISION CON DATOS DECIMALES
+ 
+double number = 10.2;
+double number2 =  2.5;
+Console.WriteLine( number / number2);
 
-var message="hello";
+/// ANAIDIR LA DIVISION UTILIZANDO DATOS DECIMALES
+decimal de = (decimal) firstNUmber / (decimal) secondNumber;
 
-//1EJERCICIO
-var name="Bob";
-var number=3;
-var number2 =32.1;
-Console.Write("Hello, mi name is " +  name  +  " i have " +  number  +  " now " +   number2);
-//OTRA MANERA DE HACERLO
-//string name2= "Bob";
-//int num1=3;
-//decimal num2= 32.4m;
-
-//COMBINACION DE CADENAS
-string secondName="Dylan";
-string greeting= "Hello";
-//string message = greeting + " " + firstName + "!";
-string message2= $"{greeting} {secondName}!";
-Console.WriteLine(message2);
-
-
-
-//Console.Clear();
-int version = 11;
-string updateText = "Update to Windows";
-message2=$"{greeting} {version.ToString()}!";
-
-Console.WriteLine(message2);
-
-Console.Clear();
-string projectName = "First project";
-var path = $@"C:\Output\{projectName}\Data";
-Console.WriteLine(path);
-
-
+///SACAR EL RESTO DE UNA DIVISION
+///int dividiendo= 20;
+///int divisor= 6;
+//int resto = dividiendo % divisor;
+///Console.WriteLine(dividiendo / divisor % resto);
 
 
