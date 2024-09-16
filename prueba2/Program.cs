@@ -1,38 +1,28 @@
-﻿///INCREMENTO Y DECREMENTO
+﻿using System.Net;
 
+Random random = new Random();
 
-//int value = 0;    //value is now 0
-//value = value + 5; //value is now 5
-//value +=5;          //value is now 10
+var discountPercentage = 0;
+for (int i = 0; i == 1; i ++);
+while(true){
+var daysUntilExpiration = random.Next(12);
 
+Console.Clear();
+Console.WriteLine("Numero de dias que expire: " + daysUntilExpiration);
+if (daysUntilExpiration > 5){
+    Console.WriteLine("Tu suscripcion esta a punto de expirar")
+}
+else if(daysUntilExpiration <= 5 && daysUntilExpiration > 1){
+    Console.WriteLine("Your subscription will in " + daysUntilExpiration + " days. Renew now and save 10%");
+}
+else if (daysUntilExpiration == 1 ){
+    Console.WriteLine("Tu suscripcion expira hoy. Renueva y ahorrate un" + discountPercentage + "%");
 
-//int value = 0;    //value is now 0
-//value = value + 1; //value is now 1
-//value ++;          //value is now 2
+}
+else{
+Console.WriteLine("Tu suscripcion ha expirado");
+}
 
-/// -----------------------------------------------------------///
-
-
-///AUMENTAR Y DISMINUIR UN VALOR
- int value = 1;
- value = value + 1;
- Console.WriteLine("Primer incremento: " + value);
-value += 1;
- Console.WriteLine("Primer incremento: " + value);
-value++;
- Console.WriteLine("Primer incremento: " + value);
- value = -1;
- Console.WriteLine("Primer incremento: " + value);
- value -=1;
- Console.WriteLine("Primer incremento: " + value);
-value--;
- Console.WriteLine("Primer incremento: " + value);
-
-/// -----------------------------------------------------------///
-
-//CALCULO GRADOS FAHRENHEIT A CELSIUS
-var FAHRENHEIT = 94;
-var CELSIUS = (FAHRENHEIT - 32m) * (5m / 9m);
-Console.WriteLine("La temperatura es " + Math.Round(CELSIUS,1) + "CELSIUS");
-Console.WriteLine("La temperatura es " + CELSIUS.ToString ("##.#") + "CELSIUS");
-Console.WriteLine("La temperatura es " + decimal.Round(CELSIUS,1) + "CELSIUS");
+}
+var tecla = Console.ReadKey();
+if(tecla.KeyChar == 'x');
