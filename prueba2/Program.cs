@@ -1,52 +1,53 @@
-﻿Random random = new Random();
+﻿using myNameSpace;
 
-var discountPercentage = 10;
-var continua =  true;
+Alumno sophia = new("Sophia", 93, 87, 98, 95, 100);
+Alumno nicolas = new("Nicolas", 80, 83, 82, 88, 85);
+Alumno zahirah = new("Zahirah", 84, 96, 73, 85, 79);
+Alumno jeong = new("Jeong", 90, 92, 98, 100, 97);
 
-while (continua)
-{
-    var daysUntilExpiration = random.Next(12);
+Console.WriteLine("Student\tGrade");
+Console.WriteLine(sophia.GetGradeString());
+Console.WriteLine(nicolas.GetGradeString());
+Console.WriteLine(zahirah.GetGradeString());
+Console.WriteLine(jeong.GetGradeString());
 
+namespace myNameSpace{
+    class Alumno{
 
-    Console.Clear();
+        string nombre;
+        int[] grades = new int[5];
 
-    Console.WriteLine("Numero de dias para que expire: " + daysUntilExpiration);
-    if (daysUntilExpiration > 5)
-    {
-        Console.WriteLine("Tu suscripción está a punto de expirar. Renuevela ahora!");
-    }
-    else if (daysUntilExpiration <= 5 && daysUntilExpiration > 1)
-    {
-        Console.WriteLine("Tu suscripción está expira en " + daysUntilExpiration + " dias.");
-    }
-    else if (daysUntilExpiration == 1)
-    {
-        Console.WriteLine("Tu suscripción expira hoy \n Renueva y ahorrate un " + discountPercentage + "%");
-    }
-    else
-    {
-        Console.WriteLine("Tu suscripción ha expirado");
-    }
+        int GetGradesSum(){
+            return grades.Sum();
+        }//End GetGradesSum
 
+        decimal GetGradesAvg(){
+            return ((decimal) GetGradesSum())/grades.Length;
+        }//End GetGradesAvg
 
-    switch (daysUntilExpiration)
-    {
-        case int n when (n > 5):
-            Console.WriteLine("Tu suscripción está a punto de expirar. Renuevela ahora!");
-            break;
-        case int n when (n <= 5 && n > 3):
-            Console.WriteLine("Tu suscripción está expira en " + daysUntilExpiration + " dias.");
-            break;
-        case int n when (n == 1):
-            Console.WriteLine("Tu suscripción expira hoy \n Renueva y ahorrate un " + discountPercentage + "%");
-            break;
-        default:
-            Console.WriteLine("Tu suscripción ha expirado");
-            break;
-    }
+        string GetGradeLetter(){
+            return GetGradesAvg() switch{
+                >= 97 => "A+",
+                >= 93 and <= 96 => "A",
+                >= 90 and <= 92 => "A-",
+                >= 87 and <= 89 => "B+",
+                >= 83 and <= 86 => "B",
+                _ => "C"
+            };
+        }//End GetGradeLetter
 
-    var tecla = Console.ReadKey();
-    if(tecla.KeyChar == 'x')
-    {continua = false;}
+        public string GetGradeString(){
+            return $"{this.nombre}\t{this.GetGradesAvg()}\t{this.GetGradeLetter()}";
+        }//End GradeString
 
-}
+        public Alumno(string _nombre, int _g0, int _g1, int _g2, int _g3, int _g4){
+            nombre = _nombre;
+            grades[0] = _g0;
+            grades[1] = _g1;
+            grades[2] = _g2;
+            grades[3] = _g3;
+            grades[4] = _g4;
+        }//End constructor
+
+    }//End Alumno
+}//End myNameSpace
