@@ -1,8 +1,11 @@
-﻿int saleAmount = 1001;
-// int discount = saleAmount > 1000 ? 100 : 50;
+﻿using System.Collections;
 
-Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
+string permission = "Manager";
+int level = 70;
 
-Random coin = new Random();
-//Console.WriteLine($"coin: {((coin.Next(0,2) == 0  ? "heads" : "tails"))}
-while(true) {Console.WriteLine(new Random().Next(0,2) < 1 ? "cara" : "cruz"); Console.ReadKey();}
+
+Console.WriteLine(permission.Contains("Admin")
+? level > 55 ? "Welcome, Super Admin" : "Welcome, Admin User" : "No tienes permisos suficientes");
+
+Console.WriteLine((permission.Contains("Manager")
+& level > 20) ? "contact an Admin for access"  : "No tienes permisos suficientes");
