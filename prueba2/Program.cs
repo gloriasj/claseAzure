@@ -1,53 +1,59 @@
-﻿using myNameSpace;
+﻿using System;
 
-Alumno sophia = new("Sophia", 93, 87, 98, 95, 100);
-Alumno nicolas = new("Nicolas", 80, 83, 82, 88, 85);
-Alumno zahirah = new("Zahirah", 84, 96, 73, 85, 79);
-Alumno jeong = new("Jeong", 90, 92, 98, 100, 97);
+Console.Clear();
 
-Console.WriteLine("Student\tGrade");
-Console.WriteLine(sophia.GetGradeString());
-Console.WriteLine(nicolas.GetGradeString());
-Console.WriteLine(zahirah.GetGradeString());
-Console.WriteLine(jeong.GetGradeString());
+// Crear un array de nombres
+string[] alumnos = { "Sophia", "Andrew", "Emma", "Logan","Gloria" };
 
-namespace myNameSpace{
-    class Alumno{
+// Crear un array de arrays de enteros
+//Inicializar directamente
+int[][] notas = new int[][]
+{
+ new int[] { 90, 86, 87, 98, 100 },
+ new int[] { 92, 89, 81, 96, 90 },
+ new int[] { 90, 85, 87, 98, 68 },
+ new int[] { 90, 95, 87, 88, 96 },
+ new int[] { 90, 97, 67, 70, 96 },
+  new int[] { 90, 97, 67, 70, 96 },
 
-        string nombre;
-        int[] grades = new int[5];
+};
+if(alumnos.Length != notas.Length){
+    Console.WriteLine("El numero de alumnos no coincide con el numero de notas");
+}
+else{
 
-        int GetGradesSum(){
-            return grades.Sum();
-        }//End GetGradesSum
+}
+var indiceDeAlumno = 0;
+decimal sumaDeValores = 0;
+// Mostrar los nombres y sus valores asociados
+foreach (var alumno in alumnos)
+{
+    sumaDeValores = notas[indiceDeAlumno].Sum();
 
-        decimal GetGradesAvg(){
-            return ((decimal) GetGradesSum())/grades.Length;
-        }//End GetGradesAvg
+    var media = sumaDeValores / (notas[0].Length );
+    indiceDeAlumno++;
+    sumaDeValores = 0;
 
-        string GetGradeLetter(){
-            return GetGradesAvg() switch{
-                >= 97 => "A+",
-                >= 93 and <= 96 => "A",
-                >= 90 and <= 92 => "A-",
-                >= 87 and <= 89 => "B+",
-                >= 83 and <= 86 => "B",
-                _ => "C"
-            };
-        }//End GetGradeLetter
 
-        public string GetGradeString(){
-            return $"{this.nombre}\t{this.GetGradesAvg()}\t{this.GetGradeLetter()}";
-        }//End GradeString
+    var notaEnLetra = "F";
+    if (media <= 59) { notaEnLetra = "F"; }
+    else if (media <= 62) { notaEnLetra = "D-"; }
+    else if (media <= 66) { notaEnLetra = "D"; }
+    else if (media <= 69) { notaEnLetra = "D+"; }
+    else if (media <= 72) { notaEnLetra = "C-"; }
+    else if (media <= 76) { notaEnLetra = "C"; }
+    else if (media <= 79) { notaEnLetra = "C+"; }
+    else if (media <= 82) { notaEnLetra = "B-"; }
+    else if (media <= 86) { notaEnLetra = "B"; }
+    else if (media <= 89) { notaEnLetra = "B+"; }
+    else if (media <= 92) { notaEnLetra = "A-"; }
+    else if (media <= 96) { notaEnLetra = "A"; }
+    else if (media <= 100) { notaEnLetra = "A+"; }
+    else { notaEnLetra = "Out Range"; }
 
-        public Alumno(string _nombre, int _g0, int _g1, int _g2, int _g3, int _g4){
-            nombre = _nombre;
-            grades[0] = _g0;
-            grades[1] = _g1;
-            grades[2] = _g2;
-            grades[3] = _g3;
-            grades[4] = _g4;
-        }//End constructor
+    Console.WriteLine($"Nombre: {alumno} \t Valores: {media} \t {notaEnLetra}");
 
-    }//End Alumno
-}//End myNameSpace
+}
+
+Console.WriteLine("Press the Enter key to continue");
+Console.ReadLine();
